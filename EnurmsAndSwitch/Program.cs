@@ -10,9 +10,11 @@ namespace EnumsAndSwitch
     {
         static void Main(string[] args)
         {
+            /*
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Hello World");
+            */
 
             List<Todo> todos = new List<Todo>()
             {
@@ -41,7 +43,28 @@ namespace EnumsAndSwitch
         {
             foreach (var todo in todos)
             {
-
+                switch (todo.Status)
+                {
+                    case Status.NotStarted:
+                        Console.ForegroundColor = ConsoleColor.White;
+                        break;
+                    case Status.InProgress:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    case Status.OnHold:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    case Status.Completed:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                    case Status.Deleted:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    default:
+                        break;
+                }
+                Console.WriteLine(todo.Description);
+                
             }
         }
     }
