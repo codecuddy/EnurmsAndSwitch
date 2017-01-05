@@ -10,6 +10,10 @@ namespace EnumsAndSwitch
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Hello World");
+
             List<Todo> todos = new List<Todo>()
             {
                 new Todo { Description = "Task 1", EstimatedHours = 6, Status = Status.Completed },
@@ -27,7 +31,7 @@ namespace EnumsAndSwitch
                 new Todo { Description = "Task 13", EstimatedHours = 12, Status = Status.Deleted },
                 new Todo { Description = "Task 14", EstimatedHours = 6, Status = Status.Completed }
             };
-
+            
             PrintAssessment(todos);
             Console.ReadLine();
 
